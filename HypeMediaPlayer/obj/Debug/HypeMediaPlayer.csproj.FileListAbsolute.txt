@@ -1,0 +1,26 @@
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.exe.config
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.exe
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.pdb
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.csprojResolveAssemblyReference.cache
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\MainWindow.baml
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\MainWindow.g.cs
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\App.g.cs
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer_MarkupCompile.cache
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.g.resources
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.Properties.Resources.resources
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.csproj.GenerateResource.Cache
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.exe
+c:\users\pedraz_t\documents\visual studio 2013\Projects\HypeMediaPlayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.pdb
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.exe.config
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.exe
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.pdb
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.exe
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.pdb
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.csprojResolveAssemblyReference.cache
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\MainWindow.baml
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\MainWindow.g.cs
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\App.g.cs
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer_MarkupCompile.cache
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.g.resources
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.Properties.Resources.resources
+C:\Users\pedraz_t\projet\mediaplayer\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.csproj.GenerateResource.Cache
