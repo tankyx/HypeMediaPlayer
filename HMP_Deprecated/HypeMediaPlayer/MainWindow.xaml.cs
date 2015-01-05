@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 
 namespace HypeMediaPlayer
 {
@@ -26,6 +28,7 @@ namespace HypeMediaPlayer
         }
 
         public static bool Initialized { private set; get; }
+        private TimeSpan TotalTime;
 
         private String getMedia()
         {
@@ -49,6 +52,7 @@ namespace HypeMediaPlayer
                 player.Source = new Uri(getMedia(), UriKind.RelativeOrAbsolute);
                 Initialized = true;
             }
+
             player.Play();
         }
 
@@ -60,6 +64,20 @@ namespace HypeMediaPlayer
         private void changeSoundLvl(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             player.Volume = (double)sound.Value;
+        }
+
+        private void moveMediaPos(object sender, RoutedPropertyChangedEventArgs<double> args)
+        {
+            int SliderValue = (int)posMedia.Value;
+
+            //player.Position = TimeSpan.FromSeconds(posMedia.Value * TotalTime.TotalSeconds);
+        }
+
+        private void setSource(object sender, RoutedEventArgs e)
+        {
+            player.Source = new Uri(getMedia(), UriKind.RelativeOrAbsolute);
+            Initialized = true;
+            playMedia(null, null);
         }
     }
 }
