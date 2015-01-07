@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>KUNT</Machine>
+    <WindowsUser>guillaume</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>24f1ed15-7633-4d7e-8ef3-e84da7f68813</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>1A27A6383B6E7E99F740B3AB0352D111A0DD05A62AD57A1EB79B8CBDD63DAC87</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>24f1ed15-7633-4d7e-8ef3-e84da7f68813_1.0.0.0_neutral__yps17xarsp2at</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>24f1ed15-7633-4d7e-8ef3-e84da7f68813_yps17xarsp2at!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>24f1ed15-7633-4d7e-8ef3-e84da7f68813</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=test</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-01-07T13:31:53.490</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\test.exe">
+      <PackagePath>test.exe</PackagePath>
+      <Modified>2015-01-07T13:31:53.418</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\bobines.png">
+      <PackagePath>Assets\bobines.png</PackagePath>
+      <Modified>2015-01-07T12:37:25.697</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\cooltext1867567611.png">
+      <PackagePath>Assets\cooltext1867567611.png</PackagePath>
+      <Modified>2015-01-07T13:30:39.328</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-09-24T19:55:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\MainLogo.png">
+      <PackagePath>Assets\MainLogo.png</PackagePath>
+      <Modified>2015-01-07T13:03:39.710</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-09-24T19:55:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-09-24T19:55:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-09-24T19:55:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\FilmStrip.png">
+      <PackagePath>Assets\FilmStrip.png</PackagePath>
+      <Modified>2015-01-06T14:10:22.473</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\film_roll.png">
+      <PackagePath>Assets\film_roll.png</PackagePath>
+      <Modified>2015-01-06T15:38:42.098</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-01-07T10:38:44.861</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-01-07T13:31:53.235</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\test.xr.xml">
+      <PackagePath>test.xr.xml</PackagePath>
+      <Modified>2015-01-07T13:31:53.229</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-01-07T13:31:53.476</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

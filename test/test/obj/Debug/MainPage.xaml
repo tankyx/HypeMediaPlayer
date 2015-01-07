@@ -1,0 +1,70 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="test.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"                     >
+	<Page.Resources>
+		<Style x:Key="button" TargetType="Button">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Viewbox Height="180">
+							<Image x:Name="button" Source="Assets/movie_reel.png" Stretch="Fill" Height="500" Width="500"/>
+						</Viewbox>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="bobines" TargetType="Button">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Viewbox Height="500" Stretch="None">
+							<Image x:Name="bobines" Source="Assets/bobines.png" Stretch="Fill" Height="1000" Width="500"/>
+						</Viewbox>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="bobine" TargetType="Button">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Viewbox Stretch="None" Height="180">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="Pressed"/>
+									<VisualState x:Name="Disabled"/>
+									<VisualState x:Name="PointerOver">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="bobine">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Thickness>0,-179,0,0</Thickness>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Image x:Name="bobine" Source="Assets/bobines.png" Stretch="Fill" Height="360" Width="180"/>
+						</Viewbox>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
+
+    <Grid Background="#FFD5BF9A">
+		<Grid x:Name="FilmStrip" Background="#00CFB53B" Width="2560" Height="218" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		<Image x:Name="MainLogo" Source="Assets/MainLogo.png" Stretch="None"/>
+		<Image x:Name="text" Source="Assets/cooltext1867567611.png" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		<Button Style="{StaticResource bobine}" HorizontalAlignment="Center"/>
+	</Grid>
+</Page>
+

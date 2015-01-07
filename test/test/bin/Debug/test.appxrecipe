@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>KUNT</Machine>
+    <WindowsUser>guillaume</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>24f1ed15-7633-4d7e-8ef3-e84da7f68813</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\test.exe">
+      <PackagePath>test.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\bobines.png">
+      <PackagePath>Assets\bobines.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\cooltext1867567611.png">
+      <PackagePath>Assets\cooltext1867567611.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\MainLogo.png">
+      <PackagePath>Assets\MainLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\FilmStrip.png">
+      <PackagePath>Assets\FilmStrip.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\Assets\film_roll.png">
+      <PackagePath>Assets\film_roll.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\test.xr.xml">
+      <PackagePath>test.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\guillaume\Documents\Visual Studio 2013\Projects\test\test\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
