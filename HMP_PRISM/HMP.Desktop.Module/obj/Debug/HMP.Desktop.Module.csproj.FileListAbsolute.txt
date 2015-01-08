@@ -31,9 +31,6 @@ C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\Views\ModuleView.g.cs
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module_MarkupCompile.cache
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module.g.resources
-C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module.csprojResolveAssemblyReference.cache
-C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\Views\ModuleView.baml
-C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\Views\ModuleView.g.cs
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module_MarkupCompile.cache
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module.g.resources
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module.dll
@@ -64,3 +61,6 @@ C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\b
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\Views\Player.baml
+C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\Views\Player.g.cs
+C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop.Module\obj\Debug\HMP.Desktop.Module.csprojResolveAssemblyReference.cache

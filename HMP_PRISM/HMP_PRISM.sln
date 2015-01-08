@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMP.Desktop", "HMP.Desktop\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMP.Desktop.Module", "HMP.Desktop.Module\HMP.Desktop.Module.csproj", "{1BA4375F-E1C4-456F-90BB-98B9461AD1BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMP.Desktop.Test", "HMP.Desktop.Test\HMP.Desktop.Test.csproj", "{F222D1B2-B480-4439-9A8E-C923765AB6D2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{1BA4375F-E1C4-456F-90BB-98B9461AD1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BA4375F-E1C4-456F-90BB-98B9461AD1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BA4375F-E1C4-456F-90BB-98B9461AD1BE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F222D1B2-B480-4439-9A8E-C923765AB6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F222D1B2-B480-4439-9A8E-C923765AB6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F222D1B2-B480-4439-9A8E-C923765AB6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F222D1B2-B480-4439-9A8E-C923765AB6D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

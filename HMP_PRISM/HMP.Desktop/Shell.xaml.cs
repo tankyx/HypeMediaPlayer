@@ -23,6 +23,7 @@ namespace HMP.Desktop
         public Shell()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
     }
 }

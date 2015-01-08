@@ -19,7 +19,7 @@ namespace HMP.Desktop.Module
 
         public void Initialize()
         {
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.ModuleView));
+            regionManager.RegisterViewWithRegion("Player", typeof(Views.Player));
         }
     }
 }

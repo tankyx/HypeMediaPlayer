@@ -4,7 +4,6 @@ C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\obj\Debu
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.exe
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.pdb
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.Module.dll
-C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.Test.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Prism.Composition.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
@@ -18,7 +17,6 @@ C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debu
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.Module.pdb
-C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.Test.pdb
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Prism.Composition.xml
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml

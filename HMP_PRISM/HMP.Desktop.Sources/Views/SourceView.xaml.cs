@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HMP.Desktop.Module.Views
+namespace HMP.Desktop.Sources.Views
 {
     /// <summary>
-    /// Interaction logic for ModuleView.xaml
+    /// Interaction logic for SourceView.xaml
     /// </summary>
-    public partial class ModuleView : UserControl
+    public partial class SourceView : UserControl
     {
-        public ModuleView()
+        public SourceView()
         {
             InitializeComponent();
         }

@@ -133,10 +133,6 @@
       <Project>{1ba4375f-e1c4-456f-90bb-98b9461ad1be}</Project>
       <Name>HMP.Desktop.Module</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HMP.Desktop.Test\HMP.Desktop.Test.csproj">
-      <Project>{f222d1b2-b480-4439-9a8e-c923765ab6d2}</Project>
-      <Name>HMP.Desktop.Test</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
