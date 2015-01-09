@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,9 @@ namespace HMP.Desktop.Module.ViewModels
 {
     public class ViewModel : INotifyPropertyChanged
     {
-        private MediaElement player;
+        private MediaElement _player;
         private Uri _source;
+        private TimeSpan _seekToMedia = TimeSpan.FromSeconds(1);
         private static bool Initialized { get; set; }
 
         public Uri SourceToPlay
@@ -24,6 +26,22 @@ namespace HMP.Desktop.Module.ViewModels
             {
                 _source = value;
                 OnPropertyChanged("SourceToPlay");
+            }
+        }
+
+
+        public double SeekToMedia
+        {
+            get 
+            {
+                if (_player == null)
+                    return 0;
+                return (_player.Position.TotalSeconds * 100) / _player.NaturalDuration.TimeSpan.TotalSeconds;
+            }
+            set 
+            { 
+                if (_player != null)
+                    _seekToMedia = TimeSpan.FromSeconds(value); 
             }
         }
 
@@ -79,21 +97,42 @@ namespace HMP.Desktop.Module.ViewModels
             }
         }
 
+        RelayCmd _changeSourceCmd;
+        public ICommand ChangeSourceCmd
+        {
+            get
+            {
+                if (_changeSourceCmd == null)
+                {
+                    _changeSourceCmd = new RelayCmd(p => ChangeSource(p),
+                        p => true);
+                }
+                return _changeSourceCmd;
+            }
+        }
+
         void PlayMedia(object param)
         {
-            player = (MediaElement)param;
+            _player = (MediaElement)param;
             if (SourceToPlay == null)
             {
                 setSource();
-                player.Source = SourceToPlay;
+                _player.Source = SourceToPlay;
             }
-            player.Play();
+            _player.Play();
         }
 
         void PauseMedia(object param)
         {
-            player = (MediaElement)param;
-            player.Pause();
+            _player = (MediaElement)param;
+            _player.Pause();
+        }
+
+        void ChangeSource(object param)
+        {
+            _player = (MediaElement)param;
+            setSource();
+            _player.Source = SourceToPlay;
         }
 
         protected void OnPropertyChanged(string p)

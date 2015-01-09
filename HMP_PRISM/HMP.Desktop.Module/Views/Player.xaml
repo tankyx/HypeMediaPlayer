@@ -9,11 +9,11 @@
             <ColumnDefinition Width="266*"/>
             <ColumnDefinition Width="251*"/>
         </Grid.ColumnDefinitions>
-        <MediaElement x:Name="player" Source="{Binding SourceToPlay}" Stretch="Uniform" LoadedBehavior="Manual" UnloadedBehavior="Stop" Grid.ColumnSpan="2" Height="300"/>
-        <Button x:Name="buttonPlay" Command="{Binding PlayMediaCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Play" Cursor="Hand" RenderTransformOrigin="1.861,2.12" HorizontalAlignment="Right" Width="75" Height="36" VerticalAlignment="Bottom" Margin="0,0,0,18" Background="#7FDDDDDD"/>
-        <Button x:Name="buttonPause" Command="{Binding PauseMediaCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Pause" Cursor="Hand" RenderTransformOrigin="1.861,2.12" HorizontalAlignment="Left" Width="75" Height="36" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,0,18" Background="#7FDDDDDD"/>
-        <Slider Margin="75,0,0,18" VerticalAlignment="Bottom" x:Name="sound" Maximum="1" HorizontalAlignment="Left" Width="75" Grid.Column="1" Background="#00000000" Opacity="0.5" Value="0.5"/>
-        <Slider x:Name="posMedia" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" SmallChange="1" Maximum="100"/>
-        <Button x:Name="buttonOpen" Content="Open ..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Height="40" Opacity="0.5"/>
+        <MediaElement Name="player" Source="{Binding SourceToPlay}" Volume="{Binding ElementName=volume, Path=Value}" MediaOpened="Element_MediaOpened" Stretch="Uniform" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Grid.ColumnSpan="2"/>
+        <Button Name="buttonPlay" Command="{Binding PlayMediaCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Play" Cursor="Hand" RenderTransformOrigin="1.861,2.12" HorizontalAlignment="Right" Width="75" Height="36" VerticalAlignment="Bottom" Margin="0,0,0,18" Background="#7FDDDDDD"/>
+        <Button Name="buttonPause" Command="{Binding PauseMediaCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Pause" Cursor="Hand" RenderTransformOrigin="1.861,2.12" HorizontalAlignment="Left" Width="75" Height="36" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,0,18" Background="#7FDDDDDD"/>
+        <Slider Name="volume" IsMoveToPointEnabled="True" Margin="75,0,0,18" VerticalAlignment="Bottom" Maximum="1" HorizontalAlignment="Left" Width="75" Grid.Column="1" Background="#00000000" Opacity="0.5" Value="0.5"/>
+        <Slider Name="posMedia" ValueChanged="posMedia_ValueChanged" IsMoveToPointEnabled="True" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5"/>
+        <Button Name="buttonOpen" Command="{Binding ChangeSourceCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Open ..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Height="40" Opacity="0.5"/>
     </Grid>
 </UserControl>
