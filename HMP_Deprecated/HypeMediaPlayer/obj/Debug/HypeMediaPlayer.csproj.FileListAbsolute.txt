@@ -133,3 +133,6 @@ C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.g.resources
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.Properties.Resources.resources
 C:\Users\pedraz_t\projet\last_HMP\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.csproj.GenerateResource.Cache
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\bin\Debug\HypeMediaPlayer.exe.config
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.exe
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\obj\Debug\HypeMediaPlayer.pdb

@@ -23,7 +23,10 @@ namespace HMP.Desktop.Module.Views
         public Player()
         {
             InitializeComponent();
-            this.DataContext = this;
+            
+            ViewModels.ViewModel vm = new ViewModels.ViewModel();
+
+            this.DataContext = vm;
         }
     }
 }
