@@ -17,7 +17,14 @@
                 </ItemsControl>
             </TabItem>
             <TabItem Header="Playlists">
-                Add item control for playlist maker
+                <ItemsControl Name="playlist" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto"
+                               Height ="Auto" prism:RegionManager.RegionName="playlist">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
             </TabItem>
         </TabControl>
     </Grid>

@@ -70,23 +70,5 @@ namespace HMP.Desktop.Module.Views
         {
             player.Position = new TimeSpan(0, 0, 0, 0, Convert.ToInt32(posMedia.Value));
         }
-
-        private void Grid_MouseEnter(object sender, MouseEventArgs e)
-        {
-            buttonOpen.Visibility = System.Windows.Visibility.Visible;
-            buttonPause.Visibility = System.Windows.Visibility.Visible;
-            buttonPlay.Visibility = System.Windows.Visibility.Visible;
-            posMedia.Visibility = System.Windows.Visibility.Visible;
-            volume.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void Grid_MouseLeave(object sender, MouseEventArgs e)
-        {
-            buttonOpen.Visibility = System.Windows.Visibility.Hidden;
-            buttonPause.Visibility = System.Windows.Visibility.Hidden;
-            buttonPlay.Visibility = System.Windows.Visibility.Hidden;
-            posMedia.Visibility = System.Windows.Visibility.Hidden;
-            volume.Visibility = System.Windows.Visibility.Hidden;
-        }
     }
 }

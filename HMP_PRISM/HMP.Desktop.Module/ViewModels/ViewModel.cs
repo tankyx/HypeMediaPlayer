@@ -29,22 +29,6 @@ namespace HMP.Desktop.Module.ViewModels
             }
         }
 
-
-        public double SeekToMedia
-        {
-            get 
-            {
-                if (_player == null)
-                    return 0;
-                return (_player.Position.TotalSeconds * 100) / _player.NaturalDuration.TimeSpan.TotalSeconds;
-            }
-            set 
-            { 
-                if (_player != null)
-                    _seekToMedia = TimeSpan.FromSeconds(value); 
-            }
-        }
-
         void setSource()
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();

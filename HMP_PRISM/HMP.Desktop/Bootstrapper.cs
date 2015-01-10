@@ -30,6 +30,7 @@ namespace HMP.Desktop
             base.ConfigureModuleCatalog();
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
             moduleCatalog.AddModule(typeof(HMP.Desktop.Module.RootModule));
+            moduleCatalog.AddModule(typeof(HMP.Desktop.PlaylistModule.playlistModule));
         }
     }
 }
