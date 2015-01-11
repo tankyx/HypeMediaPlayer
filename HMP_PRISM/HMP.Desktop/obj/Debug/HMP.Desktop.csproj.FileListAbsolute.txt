@@ -87,3 +87,5 @@ C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\obj\Debug\HMP.Des
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\obj\Debug\HMP.Desktop.csproj.GenerateResource.Cache
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\playlistModule.dll
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\playlistModule.pdb
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.ImageViewer.dll
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\HMP.Desktop\bin\Debug\HMP.Desktop.ImageViewer.pdb

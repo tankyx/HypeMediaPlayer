@@ -5,12 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="HMP.Desktop.Module.Views.Player"
         Background="#FF0A0A0A" d:DesignWidth="600.2" d:DesignHeight="185.6">
 
-    <Grid>
+    <Grid Name="maingrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="266*"/>
             <ColumnDefinition Width="251*"/>
         </Grid.ColumnDefinitions>
-        <MediaElement Name="player" Source="{Binding SourceToPlay}" MediaEnded="player_MediaEnded" Volume="{Binding ElementName=volume, Path=Value}" MediaOpened="Element_MediaOpened" Stretch="Uniform" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Grid.ColumnSpan="2"/>
+            <MediaElement Name="player" Source="{Binding SourceToPlay}" Visibility="Visible" MediaEnded="player_MediaEnded" Volume="{Binding ElementName=volume, Path=Value}" MediaOpened="Element_MediaOpened" Stretch="Uniform" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Grid.ColumnSpan="2"/>
         <Grid Background="Transparent" Grid.ColumnSpan="2" Margin="0,0,0.4,0" Height="45" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25" />
@@ -32,9 +32,10 @@
             <Button Name="buttonPause" Command="{Binding PauseMediaCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Pause" Cursor="Hand" RenderTransformOrigin="1.861,2.12" Height="27" VerticalAlignment="Bottom" Grid.Column="1" Margin="100.2,0,0,18" Background="#7FDDDDDD" HorizontalAlignment="Left" Width="75"/>
             <Slider Name="volume" IsMoveToPointEnabled="True" Margin="260.2,0,0,28" VerticalAlignment="Bottom" Maximum="1" HorizontalAlignment="Left" Width="75" Grid.Column="1" Background="#00000000" Opacity="0.5" Value="0.5"/>
             <Slider Name="posMedia" ValueChanged="posMedia_ValueChanged" IsMoveToPointEnabled="True" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5"/>
-            <Button Name="buttonOpen" Command="{Binding ChangeSourceCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Open ..." VerticalAlignment="Bottom" Height="27" Opacity="0.5" RenderTransformOrigin="0.869,2.105" Margin="25.2,0,0,18" Grid.Column="1" HorizontalAlignment="Left" Width="70"/>
+            <Button Name="buttonOpen" Command="{Binding ChangeSourceCmd}" Content="Open ..." VerticalAlignment="Bottom" Height="27" Opacity="0.5" RenderTransformOrigin="0.869,2.105" Margin="25.2,0,0,18" Grid.Column="1" HorizontalAlignment="Left" Width="70"/>
             <Button Name="buttonNext" Content="Next" Command="{Binding NextMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="387.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
             <Button Content="Prev" Command="{Binding PrevMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="340.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
+            <Label Content="{Binding CurrentFileName}" HorizontalContentAlignment="Left" Foreground="White" Margin="434.2,0,-0.4,18" Height="27" VerticalAlignment="Bottom" Opacity="0.5" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         </Grid>
     </Grid>
 </UserControl>

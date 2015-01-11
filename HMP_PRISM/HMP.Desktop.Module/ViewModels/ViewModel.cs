@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml;
@@ -19,11 +20,29 @@ namespace HMP.Desktop.Module.ViewModels
     {
         private MediaElement _player;
         private Uri _source;
+        private Uri _image;
         [XmlElement("Media")]
         private List<Media> _playlist;
         private Media _currentMedia;
+        private string _currMediaName;
         private TimeSpan _seekToMedia = TimeSpan.FromSeconds(1);
         private static bool Initialized { get; set; }
+
+        public string CurrentFileName
+        {
+            get
+            {
+                if (_currMediaName != null)
+                    return _currMediaName;
+                else
+                    return "";
+            }
+            set
+            {
+                _currMediaName = value;
+                OnPropertyChanged("CurrentFileName");
+            }
+        }
 
         public Uri SourceToPlay
         {
@@ -32,6 +51,16 @@ namespace HMP.Desktop.Module.ViewModels
             {
                 _source = value;
                 OnPropertyChanged("SourceToPlay");
+            }
+        }
+
+        public Uri ImageToShow
+        {
+            get { return _image; }
+            set
+            {
+                _image = value;
+                OnPropertyChanged("ImageToShow");
             }
         }
 
@@ -50,7 +79,7 @@ namespace HMP.Desktop.Module.ViewModels
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".mp4";
-            dlg.Filter = "MPEG 4 video (.mp4)|*.mp4|Matroska Video (.mkv)|*.mkv|Avi Video (*.avi)|*.avi|Playlist File (.xml)|*.xml";
+            dlg.Filter = "MPEG 4 video (.mp4)|*.mp4|Matroska Video (.mkv)|*.mkv|Avi Video (*.avi)|*.avi|MP3 Music (.mp3)|*.mp3|JPG Image (.jpg)|*.jpg|Playlist File (.xml)|*.xml";
 
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
@@ -66,6 +95,7 @@ namespace HMP.Desktop.Module.ViewModels
                     _playlist.Add(new Media() { name = dlg.SafeFileName, FullPath = dlg.FileName, Id = 0 });
                 }
                 _currentMedia = _playlist.First();
+                CurrentFileName = _currentMedia.name;
                 SourceToPlay = new Uri (_playlist.First().FullPath);
             }
         }
@@ -116,7 +146,7 @@ namespace HMP.Desktop.Module.ViewModels
             {
                 if (_changeSourceCmd == null)
                 {
-                    _changeSourceCmd = new RelayCmd(p => ChangeSource(p),
+                    _changeSourceCmd = new RelayCmd(p => ChangeSource(),
                         p => true);
                 }
                 return _changeSourceCmd;
@@ -129,7 +159,7 @@ namespace HMP.Desktop.Module.ViewModels
             get
             {
                 if (_nextMedia == null)
-                    _nextMedia = new RelayCmd(p => NextMedia(p), p => true);
+                    _nextMedia = new RelayCmd(p => NextMedia(), p => true);
                 return _nextMedia;
             }
         }
@@ -139,7 +169,7 @@ namespace HMP.Desktop.Module.ViewModels
             get
             {
                 if (_prevMedia == null)
-                    _prevMedia = new RelayCmd(p => PrevMedia(p), p => true);
+                    _prevMedia = new RelayCmd(p => PrevMedia(), p => true);
                 return _prevMedia;
             }
         }
@@ -159,34 +189,33 @@ namespace HMP.Desktop.Module.ViewModels
             _player.Pause();
         }
 
-        void ChangeSource(object param)
+        void ChangeSource()
         {
-            _player = (MediaElement)param;
             setSource();
         }
 
-        void NextMedia(object param)
+        void NextMedia()
         {
             Media tmp;
 
-            _player = (MediaElement)param;
             if (_playlist.IndexOf(_currentMedia) == _playlist.Count - 1)
                 tmp = _playlist[0];
             else
                 tmp = _playlist[_playlist.IndexOf(_currentMedia) + 1];
             _currentMedia = tmp;
+            CurrentFileName = _currentMedia.name;
             SourceToPlay = new Uri (_currentMedia.FullPath);
         }
-        void PrevMedia(object param)
+        void PrevMedia()
         {
             Media tmp;
 
-            _player = (MediaElement)param;
             if (_playlist.IndexOf(_currentMedia) == 0)
                 tmp = _playlist[_playlist.Count - 1];
             else
                 tmp = _playlist[_playlist.IndexOf(_currentMedia) - 1];
             _currentMedia = tmp;
+            CurrentFileName = _currentMedia.name;
             SourceToPlay = new Uri(_currentMedia.FullPath);
         }
         protected void OnPropertyChanged(string p)

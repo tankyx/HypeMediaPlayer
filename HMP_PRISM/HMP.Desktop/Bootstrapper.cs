@@ -31,6 +31,7 @@ namespace HMP.Desktop
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
             moduleCatalog.AddModule(typeof(HMP.Desktop.Module.RootModule));
             moduleCatalog.AddModule(typeof(HMP.Desktop.PlaylistModule.playlistModule));
+            moduleCatalog.AddModule(typeof(HMP.Desktop.ImageViewer.imgModule));
         }
     }
 }

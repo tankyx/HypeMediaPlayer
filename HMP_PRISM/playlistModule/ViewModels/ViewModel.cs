@@ -36,6 +36,31 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
                 return _addFile;
             }
         }
+
+        RelayCmd _delFile;
+        public ICommand DelFileCmd
+        {
+            get
+            {
+                if (_delFile == null)
+                    _delFile = new RelayCmd(p => DelFile(p), p => true);
+                return _delFile;
+            }
+        }
+
+        void DelFile(object param)
+        {
+            _list = (ListView)param;
+            var toBeDel = _list.SelectedItems;
+            if (toBeDel.Count != 0)
+            {
+                for (int i = toBeDel.Count - 1; i >= 0; i--)
+                {
+                    _MediaList.Remove((Media)toBeDel[i]);
+                    _MediaCollection.Remove((Media)toBeDel[i]);
+                }
+            }
+        }
         public string PlaylistName
         {
             get { return _listname; }

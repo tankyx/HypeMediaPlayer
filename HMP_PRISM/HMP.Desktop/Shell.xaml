@@ -26,6 +26,16 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </TabItem>
+            <TabItem Header="Image Viewer">
+                <ItemsControl Name="ImgView" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto"
+                               Height ="Auto" prism:RegionManager.RegionName="ImgView">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

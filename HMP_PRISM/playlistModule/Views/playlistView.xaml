@@ -17,7 +17,8 @@
         <Label Content="Current File in " HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="26" Width="83"/>
         <Label Content="{Binding PlaylistName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,10,0,0" Height="26" Width="73"/>
         <Button Content="Add Files" Command="{Binding AddFileCmd}" CommandParameter="{Binding ElementName=list, Mode=OneWay}" HorizontalAlignment="Left" Margin="8,52,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Save Playlist" Command="{Binding SaveListCmd}" HorizontalAlignment="Left" Margin="8,88,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Open Playlist" Command="{Binding OpenListCmd}" CommandParameter="{Binding ElementName=list, Mode=OneWay}" HorizontalAlignment="Left" Margin="8,124,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Save Playlist" Command="{Binding SaveListCmd}" HorizontalAlignment="Left" Margin="8,161,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Open Playlist" Command="{Binding OpenListCmd}" CommandParameter="{Binding ElementName=list, Mode=OneWay}" HorizontalAlignment="Left" Margin="8,141,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Del Selected" Command="{Binding DelFileCmd}" CommandParameter="{Binding ElementName=list, Mode=OneWay}" HorizontalAlignment="Left" Margin="8,72,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

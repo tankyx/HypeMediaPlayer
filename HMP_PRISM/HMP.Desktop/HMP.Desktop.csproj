@@ -135,6 +135,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HMP.Desktop.ImageViewer\HMP.Desktop.ImageViewer.csproj">
+      <Project>{ca133a15-50bb-4669-b889-ad071a0116f6}</Project>
+      <Name>HMP.Desktop.ImageViewer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMP.Desktop.Module\HMP.Desktop.Module.csproj">
       <Project>{1ba4375f-e1c4-456f-90bb-98b9461ad1be}</Project>
       <Name>HMP.Desktop.Module</Name>
