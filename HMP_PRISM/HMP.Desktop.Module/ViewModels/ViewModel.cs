@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.Prism.Commands;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -9,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace HMP.Desktop.Module.ViewModels
 {
@@ -16,6 +19,9 @@ namespace HMP.Desktop.Module.ViewModels
     {
         private MediaElement _player;
         private Uri _source;
+        [XmlElement("Media")]
+        private List<Media> _playlist;
+        private Media _currentMedia;
         private TimeSpan _seekToMedia = TimeSpan.FromSeconds(1);
         private static bool Initialized { get; set; }
 
@@ -29,16 +35,38 @@ namespace HMP.Desktop.Module.ViewModels
             }
         }
 
+        void setMediaList(string listName)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(List<Media>));
+            if (_playlist != null)
+                _playlist.Clear();
+            using (System.IO.StreamReader fileNameXml = new System.IO.StreamReader(listName))
+            using (var reader = XmlReader.Create(fileNameXml))
+            {
+                _playlist = (List<Media>)ser.Deserialize(reader);
+            }
+        }
         void setSource()
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".mp4";
-            dlg.Filter = "MPEG 4 video (.mp4)|*.mp4|Matroska Video (.mkv)|*.mkv|Avi Video (*.avi)|*.avi";
+            dlg.Filter = "MPEG 4 video (.mp4)|*.mp4|Matroska Video (.mkv)|*.mkv|Avi Video (*.avi)|*.avi|Playlist File (.xml)|*.xml";
 
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
-                SourceToPlay = new Uri (dlg.FileName);
+                Debug.Write("Extention playlist = " + System.IO.Path.GetExtension(dlg.SafeFileName) + "\n");
+                if (System.IO.Path.GetExtension(dlg.SafeFileName) == ".xml")
+                {
+                    setMediaList(dlg.FileName);
+                }
+                else
+                {
+                    _playlist = new List<Media>();
+                    _playlist.Add(new Media() { name = dlg.SafeFileName, FullPath = dlg.FileName, Id = 0 });
+                }
+                _currentMedia = _playlist.First();
+                SourceToPlay = new Uri (_playlist.First().FullPath);
             }
         }
 
@@ -95,13 +123,32 @@ namespace HMP.Desktop.Module.ViewModels
             }
         }
 
+        RelayCmd _nextMedia;
+        public ICommand NextMediaCmd
+        {
+            get
+            {
+                if (_nextMedia == null)
+                    _nextMedia = new RelayCmd(p => NextMedia(p), p => true);
+                return _nextMedia;
+            }
+        }
+        RelayCmd _prevMedia;
+        public ICommand PrevMediaCmd
+        {
+            get
+            {
+                if (_prevMedia == null)
+                    _prevMedia = new RelayCmd(p => PrevMedia(p), p => true);
+                return _prevMedia;
+            }
+        }
         void PlayMedia(object param)
         {
             _player = (MediaElement)param;
             if (SourceToPlay == null)
             {
                 setSource();
-                _player.Source = SourceToPlay;
             }
             _player.Play();
         }
@@ -116,9 +163,32 @@ namespace HMP.Desktop.Module.ViewModels
         {
             _player = (MediaElement)param;
             setSource();
-            _player.Source = SourceToPlay;
         }
 
+        void NextMedia(object param)
+        {
+            Media tmp;
+
+            _player = (MediaElement)param;
+            if (_playlist.IndexOf(_currentMedia) == _playlist.Count - 1)
+                tmp = _playlist[0];
+            else
+                tmp = _playlist[_playlist.IndexOf(_currentMedia) + 1];
+            _currentMedia = tmp;
+            SourceToPlay = new Uri (_currentMedia.FullPath);
+        }
+        void PrevMedia(object param)
+        {
+            Media tmp;
+
+            _player = (MediaElement)param;
+            if (_playlist.IndexOf(_currentMedia) == 0)
+                tmp = _playlist[_playlist.Count - 1];
+            else
+                tmp = _playlist[_playlist.IndexOf(_currentMedia) - 1];
+            _currentMedia = tmp;
+            SourceToPlay = new Uri(_currentMedia.FullPath);
+        }
         protected void OnPropertyChanged(string p)
         {
             var eventHandler = PropertyChanged;
@@ -127,7 +197,15 @@ namespace HMP.Desktop.Module.ViewModels
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
-
+    public class Media
+    {
+        [XmlElement("fullPath")]
+        public string FullPath { get; set; }
+        [XmlAttribute("id")]
+        public int Id { get; set; }
+        [XmlElement("name")]
+        public string name { get; set; }
+    }
     class RelayCmd : ICommand
     {
         private readonly Predicate<object> _canExecute;

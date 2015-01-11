@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
@@ -15,9 +18,13 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
     {
         private List<string> _playlist = new List<string>();
         private ListView _list;
+        [XmlElement("Media")]
         private List<Media> _MediaList = new List<Media>();
         private string _listname = "";
         private static int _id = 1;
+        ObservableCollection<Media> _MediaCollection = new ObservableCollection<Media>();
+        public ObservableCollection<Media> MediaCollection
+        { get { return _MediaCollection; } }
 
         RelayCmd _addFile;
         public ICommand AddFileCmd
@@ -27,6 +34,15 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
                 if (_addFile == null)
                     _addFile = new RelayCmd(p => multiOpenFile(p), p => true);
                 return _addFile;
+            }
+        }
+        public string PlaylistName
+        {
+            get { return _listname; }
+            set
+            {
+                _listname = value;
+                OnPropertyChanged("PlaylistName");
             }
         }
         private void multiOpenFile(object param)
@@ -42,7 +58,8 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
             {
                 foreach(String file in dlg.FileNames)
                 {
-                    _list.Items.Add(file);
+                    _MediaList.Add(new Media() { name = System.IO.Path.GetFileName(file), FullPath = file });
+                    _MediaCollection.Add(new Media() { name = System.IO.Path.GetFileName(file), FullPath = file });
                     _playlist.Add(file);
                 }
             }
@@ -74,10 +91,6 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
                 _listname = dlg.FileName;
                 XmlSerializer ser = new XmlSerializer(typeof(List<Media>));
                 System.IO.StreamWriter fileNameXml = new System.IO.StreamWriter(_listname);
-                foreach (string filePath in _playlist)
-                {
-                    _MediaList.Add(new Media { FullPath = filePath, Id = _id++ });
-                }
                 ser.Serialize(fileNameXml, _MediaList);
             }
         }
@@ -104,20 +117,22 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
-                XElement doc = XElement.Load(dlg.FileName);
-                var MediaLst = doc.Elements("Media").Select(x =>
-                new
+                PlaylistName = dlg.SafeFileName;
+                XmlSerializer ser = new XmlSerializer(typeof(List<Media>));
+                _MediaList.Clear();
+                _MediaCollection.Clear();
+                using (System.IO.StreamReader fileNameXml = new System.IO.StreamReader(dlg.FileName))
+                using (var reader = XmlReader.Create(fileNameXml))
                 {
-                    FullPath = x.Element("fullPath").Value
+                    _MediaList = (List<Media>)ser.Deserialize(reader);
                 }
-                );
-                foreach (var med in MediaLst)
+                foreach (var med in _MediaList)
                 {
-                    _playlist.Add(med.FullPath);
-                    _list.Items.Add(med.FullPath);
+                    _MediaCollection.Add(med);
                 }
             }
         }
+ 
         protected void OnPropertyChanged(string p)
         {
             var eventHandler = PropertyChanged;
@@ -130,9 +145,11 @@ namespace HMP.Desktop.PlaylistModule.ViewModels
     public class Media
     {
         [XmlElement("fullPath")]
-        public string FullPath;
+        public string FullPath { get; set; }
         [XmlAttribute("id")]
-        public int Id;
+        public int Id { get; set; }
+        [XmlElement("name")]
+        public string name { get; set; }
     }
     class RelayCmd : ICommand
     {

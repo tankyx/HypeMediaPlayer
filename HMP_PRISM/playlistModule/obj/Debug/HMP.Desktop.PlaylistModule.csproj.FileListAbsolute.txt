@@ -31,3 +31,5 @@ C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\playlistModule\obj\Debug\play
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\playlistModule\obj\Debug\playlistModule.dll
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\playlistModule\obj\Debug\playlistModule.pdb
 C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\playlistModule\obj\Debug\HMP.Desktop.PlaylistModule.csprojResolveAssemblyReference.cache
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\playlistModule\bin\Debug\HMP.Desktop.Module.dll
+C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_PRISM\playlistModule\bin\Debug\HMP.Desktop.Module.pdb

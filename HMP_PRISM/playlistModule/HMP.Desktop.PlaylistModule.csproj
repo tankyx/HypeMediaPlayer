@@ -81,7 +81,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HMP.Desktop.Module\HMP.Desktop.Module.csproj">
+      <Project>{1ba4375f-e1c4-456f-90bb-98b9461ad1be}</Project>
+      <Name>HMP.Desktop.Module</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

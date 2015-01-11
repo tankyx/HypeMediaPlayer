@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="HMP.Desktop.Module.Views.Player"
-        Background="#FF0A0A0A" d:DesignWidth="409.2" d:DesignHeight="185.6">
+        Background="#FF0A0A0A" d:DesignWidth="600.2" d:DesignHeight="185.6">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,6 +33,8 @@
             <Slider Name="volume" IsMoveToPointEnabled="True" Margin="260.2,0,0,28" VerticalAlignment="Bottom" Maximum="1" HorizontalAlignment="Left" Width="75" Grid.Column="1" Background="#00000000" Opacity="0.5" Value="0.5"/>
             <Slider Name="posMedia" ValueChanged="posMedia_ValueChanged" IsMoveToPointEnabled="True" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5"/>
             <Button Name="buttonOpen" Command="{Binding ChangeSourceCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Open ..." VerticalAlignment="Bottom" Height="27" Opacity="0.5" RenderTransformOrigin="0.869,2.105" Margin="25.2,0,0,18" Grid.Column="1" HorizontalAlignment="Left" Width="70"/>
+            <Button Content="Next" Command="{Binding NextMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="387.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
+            <Button Content="Prev" Command="{Binding PrevMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="340.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
         </Grid>
     </Grid>
 </UserControl>

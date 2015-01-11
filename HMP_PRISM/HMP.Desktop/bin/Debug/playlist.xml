@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMedia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Media id="0">
+    <fullPath>C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\Media\AC - Clio Cup - Secteur 2 Magny.mp4</fullPath>
+    <name>AC - Clio Cup - Secteur 2 Magny.mp4</name>
+  </Media>
+  <Media id="1">
+    <fullPath>C:\Users\pedraz_t\projet\HypeMediaPlayer\HMP_Deprecated\HypeMediaPlayer\Media\AC - Clio Cup - Secteur 2 Magny.mp4</fullPath>
+    <name>playlist.xml</name>
+  </Media>
+</ArrayOfMedia>
