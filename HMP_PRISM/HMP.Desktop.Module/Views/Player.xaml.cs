@@ -70,5 +70,12 @@ namespace HMP.Desktop.Module.Views
         {
             player.Position = new TimeSpan(0, 0, 0, 0, Convert.ToInt32(posMedia.Value));
         }
+
+        private void player_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            var viewModel = (ViewModels.ViewModel)DataContext;
+            if (viewModel.NextMediaCmd.CanExecute(null))
+                viewModel.NextMediaCmd.Execute(null);
+        }
     }
 }

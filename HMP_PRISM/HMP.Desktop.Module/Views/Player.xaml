@@ -10,7 +10,7 @@
             <ColumnDefinition Width="266*"/>
             <ColumnDefinition Width="251*"/>
         </Grid.ColumnDefinitions>
-        <MediaElement Name="player" Source="{Binding SourceToPlay}" Volume="{Binding ElementName=volume, Path=Value}" MediaOpened="Element_MediaOpened" Stretch="Uniform" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Grid.ColumnSpan="2"/>
+        <MediaElement Name="player" Source="{Binding SourceToPlay}" MediaEnded="player_MediaEnded" Volume="{Binding ElementName=volume, Path=Value}" MediaOpened="Element_MediaOpened" Stretch="Uniform" ScrubbingEnabled="True" LoadedBehavior="Manual" UnloadedBehavior="Stop" Grid.ColumnSpan="2"/>
         <Grid Background="Transparent" Grid.ColumnSpan="2" Margin="0,0,0.4,0" Height="45" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25" />
@@ -33,7 +33,7 @@
             <Slider Name="volume" IsMoveToPointEnabled="True" Margin="260.2,0,0,28" VerticalAlignment="Bottom" Maximum="1" HorizontalAlignment="Left" Width="75" Grid.Column="1" Background="#00000000" Opacity="0.5" Value="0.5"/>
             <Slider Name="posMedia" ValueChanged="posMedia_ValueChanged" IsMoveToPointEnabled="True" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5"/>
             <Button Name="buttonOpen" Command="{Binding ChangeSourceCmd}" CommandParameter="{Binding ElementName=player, Mode=OneWay}" Content="Open ..." VerticalAlignment="Bottom" Height="27" Opacity="0.5" RenderTransformOrigin="0.869,2.105" Margin="25.2,0,0,18" Grid.Column="1" HorizontalAlignment="Left" Width="70"/>
-            <Button Content="Next" Command="{Binding NextMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="387.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
+            <Button Name="buttonNext" Content="Next" Command="{Binding NextMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="387.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
             <Button Content="Prev" Command="{Binding PrevMediaCmd}" Grid.Column="1" HorizontalAlignment="Left" Margin="340.2,0,0,0" VerticalAlignment="Top" Width="42" Opacity="0.5"/>
         </Grid>
     </Grid>
