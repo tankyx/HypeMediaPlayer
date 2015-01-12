@@ -67,7 +67,7 @@ namespace HMP.Desktop.Module.ViewModels
         {
             XmlSerializer ser = new XmlSerializer(typeof(List<Models.Media>));
             if (model.MediaList != null)
-                model.ClearMediaList();
+                model.MediaList.Clear();
             using (System.IO.StreamReader fileNameXml = new System.IO.StreamReader(listName))
             using (var reader = XmlReader.Create(fileNameXml))
             {
@@ -80,21 +80,23 @@ namespace HMP.Desktop.Module.ViewModels
             dlg.DefaultExt = ".mp4";
             dlg.Filter = "MPEG 4 video (.mp4)|*.mp4|Matroska Video (.mkv)|*.mkv|Avi Video (*.avi)|*.avi|MP3 Music (.mp3)|*.mp3|JPG Image (.jpg)|*.jpg|Playlist File (.xml)|*.xml";
 
+            Models.Media tmp;
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
-                Debug.Write("Extention playlist = " + System.IO.Path.GetExtension(dlg.SafeFileName) + "\n");
                 if (System.IO.Path.GetExtension(dlg.SafeFileName) == ".xml")
                 {
                     setMediaList(dlg.FileName);
+                    model.CurrentMedia = model.MediaList.First();
                 }
                 else
                 {
-                    model.MediaList.Add(new Models.Media() { name = dlg.SafeFileName, FullPath = dlg.FileName, Id = 0 });
+                    tmp = new Models.Media() { name = dlg.SafeFileName, FullPath = dlg.FileName, Id = 0 };
+                    model.MediaList.Add(tmp);
+                    model.CurrentMedia = tmp;
                 }
-                model.CurrentMedia = model.MediaList.First();
                 CurrentFileName = model.CurrentMedia.name;
-                SourceToPlay = new Uri(model.MediaList.First().FullPath);
+                SourceToPlay = new Uri(model.CurrentMedia.FullPath);
             }
         }
 
@@ -223,15 +225,6 @@ namespace HMP.Desktop.Module.ViewModels
                 eventHandler(this, new PropertyChangedEventArgs(p));
         }
         public event PropertyChangedEventHandler PropertyChanged;
-    }
-    public class Media
-    {
-        [XmlElement("fullPath")]
-        public string FullPath { get; set; }
-        [XmlAttribute("id")]
-        public int Id { get; set; }
-        [XmlElement("name")]
-        public string name { get; set; }
     }
     class RelayCmd : ICommand
     {

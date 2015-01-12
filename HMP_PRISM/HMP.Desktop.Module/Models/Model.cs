@@ -21,11 +21,6 @@ namespace HMP.Desktop.Module.Models
             get { return _currentMedia; }
             set { _currentMedia = value; }
         }
-        public void ClearMediaList()
-        {
-            if (_mediaList != null)
-                _mediaList.Clear();
-        }
         public Model()
         {
             _mediaList = new List<Media>();
