@@ -13,6 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
+using HMP.Desktop.Module.Models;
 
 namespace HMP.Desktop.Module.ViewModels
 {
@@ -22,10 +23,8 @@ namespace HMP.Desktop.Module.ViewModels
         private Uri _source;
         private Uri _image;
         [XmlElement("Media")]
-        private List<Media> _playlist;
-        private Media _currentMedia;
+        private Model model = new Model();
         private string _currMediaName;
-        private TimeSpan _seekToMedia = TimeSpan.FromSeconds(1);
         private static bool Initialized { get; set; }
 
         public string CurrentFileName
@@ -66,13 +65,13 @@ namespace HMP.Desktop.Module.ViewModels
 
         void setMediaList(string listName)
         {
-            XmlSerializer ser = new XmlSerializer(typeof(List<Media>));
-            if (_playlist != null)
-                _playlist.Clear();
+            XmlSerializer ser = new XmlSerializer(typeof(List<Models.Media>));
+            if (model.MediaList != null)
+                model.ClearMediaList();
             using (System.IO.StreamReader fileNameXml = new System.IO.StreamReader(listName))
             using (var reader = XmlReader.Create(fileNameXml))
             {
-                _playlist = (List<Media>)ser.Deserialize(reader);
+                model.MediaList = (List<Models.Media>)ser.Deserialize(reader);
             }
         }
         void setSource()
@@ -91,12 +90,11 @@ namespace HMP.Desktop.Module.ViewModels
                 }
                 else
                 {
-                    _playlist = new List<Media>();
-                    _playlist.Add(new Media() { name = dlg.SafeFileName, FullPath = dlg.FileName, Id = 0 });
+                    model.MediaList.Add(new Models.Media() { name = dlg.SafeFileName, FullPath = dlg.FileName, Id = 0 });
                 }
-                _currentMedia = _playlist.First();
-                CurrentFileName = _currentMedia.name;
-                SourceToPlay = new Uri (_playlist.First().FullPath);
+                model.CurrentMedia = model.MediaList.First();
+                CurrentFileName = model.CurrentMedia.name;
+                SourceToPlay = new Uri(model.MediaList.First().FullPath);
             }
         }
 
@@ -196,27 +194,27 @@ namespace HMP.Desktop.Module.ViewModels
 
         void NextMedia()
         {
-            Media tmp;
+            Models.Media tmp;
 
-            if (_playlist.IndexOf(_currentMedia) == _playlist.Count - 1)
-                tmp = _playlist[0];
+            if (model.MediaList.IndexOf(model.CurrentMedia) == model.MediaList.Count - 1)
+                tmp = model.MediaList[0];
             else
-                tmp = _playlist[_playlist.IndexOf(_currentMedia) + 1];
-            _currentMedia = tmp;
-            CurrentFileName = _currentMedia.name;
-            SourceToPlay = new Uri (_currentMedia.FullPath);
+                tmp = model.MediaList[model.MediaList.IndexOf(model.CurrentMedia) + 1];
+            model.CurrentMedia = tmp;
+            CurrentFileName = model.CurrentMedia.name;
+            SourceToPlay = new Uri(model.CurrentMedia.FullPath);
         }
         void PrevMedia()
         {
-            Media tmp;
+            Models.Media tmp;
 
-            if (_playlist.IndexOf(_currentMedia) == 0)
-                tmp = _playlist[_playlist.Count - 1];
+            if (model.MediaList.IndexOf(model.CurrentMedia) == 0)
+                tmp = model.MediaList[model.MediaList.Count - 1];
             else
-                tmp = _playlist[_playlist.IndexOf(_currentMedia) - 1];
-            _currentMedia = tmp;
-            CurrentFileName = _currentMedia.name;
-            SourceToPlay = new Uri(_currentMedia.FullPath);
+                tmp = model.MediaList[model.MediaList.IndexOf(model.CurrentMedia) - 1];
+            model.CurrentMedia = tmp;
+            CurrentFileName = model.CurrentMedia.name;
+            SourceToPlay = new Uri(model.CurrentMedia.FullPath);
         }
         protected void OnPropertyChanged(string p)
         {
